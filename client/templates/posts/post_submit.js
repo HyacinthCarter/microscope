@@ -5,13 +5,15 @@ Template.postSubmit.events({
       var post = {
           url: target.url.value,
           title: target.title.value,
-        //   url: $(event.target).find('[name=url]').val(),
-        //   title: $(event.target).find('[name=title]').val()
-      };
+        };
 
-      post._id = Posts.insert(post);
-      Router.go('postPage', post );
+      Meteor.call('postInsert', post, function(error, result){
+          if (error){
+              return alert(error.reason);
+            }else{
+              Router.go('postPage', { _id: result._id } );
+            }
+        });
      
     }
-    
-})
+});
