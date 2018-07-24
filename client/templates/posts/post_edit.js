@@ -1,3 +1,7 @@
+Template.postEdit.onCreated(function(){
+    Session.set('postEditErrors', {});
+});
+
 Template.postEdit.events({
     'submit form': function(event){
         event.preventDefault();
@@ -27,5 +31,14 @@ Template.postEdit.events({
             Posts.remove(currentPostId);
             Router.go('postList')
         }
+    }
+});
+
+Template.postEdit.helpers({
+    errorMessage:function(field){
+        return Session.get('postEditError')[field];
+    },
+    errorClass: function(field){
+        return Session.get('postEditErrors')[field] ?  'has-error': '';
     }
 })
