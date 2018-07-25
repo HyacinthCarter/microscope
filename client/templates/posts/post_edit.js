@@ -12,7 +12,7 @@ Template.postEdit.events({
         var postProperties = {
             url: target.url.value,
             title: target.title.value
-        }
+        };
 
         Posts.update(currentPostId, {$set: postProperties}, function(error){
             if(error){
@@ -28,17 +28,18 @@ Template.postEdit.events({
 
         if(confirm('Delete this post?')){
             var currentPostId = this._id;
+            console.log(currentPostId);
             Posts.remove(currentPostId);
-            Router.go('postList')
+            Router.go('postsList')
         }
     }
 });
 
 Template.postEdit.helpers({
     errorMessage:function(field){
-        return Session.get('postEditError')[field];
+        let val = Session.get("postEditErrors")[field];
     },
     errorClass: function(field){
-        return Session.get('postEditErrors')[field] ?  'has-error': '';
+        return !!Session.get('postEditErrors')[field] ?  'has-error': '';
     }
 })
