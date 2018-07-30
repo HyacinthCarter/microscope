@@ -8,7 +8,7 @@ Template.postItem.helpers({
         console.log(a.hostname);
         return a.hostname;
     },
-    commentsCount: function(){
-        return Comments.find({ postId: this._id }).count();
-    }
+    // commentsCount: function(){
+    //     return Comments.find({ postId: this._id }).count();
+    // }
 })
