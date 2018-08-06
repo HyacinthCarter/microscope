@@ -3,8 +3,7 @@ notifications: function () {
     return Notifications.find({userId: Meteor.userId(), read: false });
 },
 notificationCount: function () {
-    let count = Notifications.find({ userId: Meteor.userId(), read: false }).count();
-    return count;
+    return  Notifications.find({ userId: Meteor.userId(), read: false }).count();
 }
 });
 
