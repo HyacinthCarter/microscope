@@ -1,7 +1,7 @@
 Template.errors.helpers({
     errors: function(){
         return Errors.find();
-    }
+    },
 });
 
 Template.error.onRendered(function(){
@@ -10,3 +10,7 @@ Template.error.onRendered(function(){
         Errors.remove(error._id);
     },  3000);
 })
+
+
+    
+  
