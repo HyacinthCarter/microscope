@@ -1,10 +1,14 @@
 <template name="postsList">
     <div class="posts">
         {{#if currentUser}}
-        {{#each posts}}
-         {{> postItem}}
-        {{/each}}
-        {{/if}}
+            {{#each posts}}
+              {{> postItem}}
+            {{/each}}
+
+            {{#if nextPath}}
+             <a class="load-more" href="{{nextPath}}">Load More</a>
+            {{/if}}
+        {{/if}}    
     </div>
    
 </template>
