@@ -65,3 +65,4 @@ if (Posts.find().count() === 0){
         commentsCount: 0
     });
 }
+
