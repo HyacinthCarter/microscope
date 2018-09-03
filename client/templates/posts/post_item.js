@@ -12,3 +12,9 @@ Template.postItem.helpers({
     //     return Comments.find({ postId: this._id }).count();
     // }
 })
+Template.postItem.events({
+    'click .upvote': function(event){
+        event.preventDefault();
+        Meteor.call('upvote', this._id);
+    }
+})
