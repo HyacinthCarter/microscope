@@ -26,3 +26,5 @@ Template.postItem.events({
         Meteor.call('upvote', this._id);
     }
 })
+
+
