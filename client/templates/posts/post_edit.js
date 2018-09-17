@@ -22,7 +22,6 @@ Template.postEdit.events({
             }
         })
     },
-
     'click .delete': function(event){
         event.preventDefault();
 
@@ -30,7 +29,7 @@ Template.postEdit.events({
             var currentPostId = this._id;
             console.log(currentPostId);
             Posts.remove(currentPostId);
-            Router.go('postsList')
+            Router.go('home');
         }
     }
 });

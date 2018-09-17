@@ -6,6 +6,11 @@ Template.postsList.helpers({
 });
 
 Template.postsList.onRendered(function(){
+    this.find('.wrapper')._uihooks = {
+        moveElement: function(node, next){
+            // wait for instruction
+        }
+    }
 //   var selected = document.getElementById('sel'), Opt, i;
 //   console.log(selected);
 //   for( var i = 0; i < selected.length; i++){
