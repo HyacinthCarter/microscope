@@ -1,5 +1,4 @@
 // Creating a local Npm RSS package
-
 Package.describe({
     name: 'rss',
     summary: 'RSS feed generator',
@@ -13,5 +12,7 @@ Package.onUse(function (api) {
     api.addFiles('rss.js', 'server');
     api.export('RSS');
 });
+
+
 
 
