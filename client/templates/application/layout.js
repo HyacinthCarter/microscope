@@ -14,3 +14,10 @@ Template.layout.onRendered(function(){
         }
     }
 })
+
+// var curl = require('curlrequest');
+// var options =  { url: 'https://api.vista.co.nz',
+//         header: { 'connectapitoken': '665754656565-76768'},
+//         verbose: true,
+//         stderr: true
+//     };
