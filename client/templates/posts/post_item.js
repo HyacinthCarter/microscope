@@ -19,6 +19,9 @@ Template.postItem.helpers({
       return "disabled";
     }
   },
+  postUrl: () => {
+    return this.shortUrl ? this.shortUrl : this.url;
+  }
 });
 Template.postItem.events({
   "click .upvotable": function(event) {
